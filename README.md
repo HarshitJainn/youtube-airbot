@@ -1,44 +1,45 @@
-# 🎥 YouTube Gesture Controller - Chrome Extension
+# 🤚 YouTube Gesture Controller (Streamlit App)
 
-Control YouTube videos using **hand gestures** via your **webcam**, powered by MediaPipe Hands in JavaScript.
-
-This Chrome Extension overlays a webcam feed on YouTube and maps specific hand gestures to common playback actions like **Play/Pause**, **Volume Up/Down**, **Next**, and **Previous Video**.
+Control YouTube videos using **hand gestures** via your webcam — all from a clean and simple **Streamlit interface**! This app uses **MediaPipe**, **OpenCV**, and **PyAutoGUI** to recognize gestures and simulate YouTube keyboard shortcuts.
 
 ---
 
-## 🚀 Features
+## 🎯 Features
 
-- 🎯 Real-time gesture detection using MediaPipe Hands JS
-- ✋ Recognizes various hand poses with a single hand
-- 🔊 Simulates YouTube player controls (play, pause, volume, navigation)
-- 🖥️ Works directly on any YouTube tab
-- 🌐 100% client-side, no server or backend required
-
----
-
-## 🖐️ Gesture-to-Action Mapping
-
-| Gesture                        | Action         |
-|-------------------------------|----------------|
-| All fingers up                | Play / Pause   |
-| All fingers down              | Play / Pause   |
-| Index + Middle finger up      | Volume Up      |
-| Ring + Pinky finger up        | Volume Down    |
-| Only Pinky up                 | Next Video     |
-| All fingers except Pinky up   | Previous Video |
-
-> ℹ️ A 0.5-second cooldown is used to avoid repeated triggers.
+- Real-time hand gesture recognition
+- Control YouTube playback with:
+  - Play / Pause
+  - Volume Up / Down
+  - Next / Previous video
+- Works on **any YouTube tab** open on your computer
+- Built with:
+  - MediaPipe Hands for gesture detection
+  - OpenCV for camera processing
+  - PyAutoGUI + keyboard for simulating controls
+  - Streamlit for web UI
 
 ---
 
-## 📁 Project Structure
+## 🖐️ Gesture Mappings
+
+| Hand Gesture                    | Action          |
+|--------------------------------|-----------------|
+| All fingers up                 | Play / Pause    |
+| All fingers down               | Play / Pause    |
+| Index + Middle up              | Volume Up       |
+| Ring + Pinky up                | Volume Down     |
+| Only Pinky up                  | Next Video      |
+| All except Pinky up            | Previous Video  |
+
+> ⚠️ Cooldown of `0.5s` is used to avoid repeated action triggers.
+
+---
+
+## 🚀 How to Run
+
+### 🔧 Requirements
+
+Install the required packages using pip:
 
 ```bash
-youtube-gesture-extension/
-├── manifest.json           # Chrome extension config
-├── content.js              # Injects webcam and gesture logic into YouTube
-├── hand-gesture.js         # Core gesture recognition logic
-├── style.css               # Optional styling
-├── popup.html              # Optional UI for extension popup
-├── popup.js                # Optional popup script
-└── README.md
+pip install streamlit opencv-python mediapipe numpy keyboard pyautogui
