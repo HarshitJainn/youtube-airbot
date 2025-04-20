@@ -43,3 +43,13 @@ Install the required packages using pip:
 
 ```bash
 pip install streamlit opencv-python mediapipe numpy keyboard pyautogui
+
+## 🚀 Launch the App
+
+### 🛠️ Step 1: Install Dependencies
+
+Make sure you have Python installed, then run:
+
+streamlit run app.py
+
+## ✅ Make sure your YouTube tab is active and focused when using gestures!
